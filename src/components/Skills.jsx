@@ -4,22 +4,29 @@ import { Code, Microchip, Settings } from 'lucide-react';
 
 const skillsData = {
   programming: [
-    { name: 'C/C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-    { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' }
+    { name: 'C', icon: 'https://cdn.simpleicons.org/c/22d3ee' },
+    { name: 'Python', icon: 'https://cdn.simpleicons.org/python/22d3ee' },
+    { name: 'Java', icon: 'https://cdn.simpleicons.org/openjdk/22d3ee' },
+    { name: 'Verilog HDL', icon: 'https://cdn.simpleicons.org/verilog/22d3ee' }
+
   ],
   embedded: [
-    { name: 'ESP32', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg' },
-    { name: 'Arduino', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg' },
-    { name: 'STM32', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg' },
-    { name: 'Sensors', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg' }
+    { name: 'ARM Cortex-M3 (LPC1768)', icon: 'https://cdn.simpleicons.org/arm/22d3ee' },
+    { name: 'Basys3 & PYNQ Z2 (FPGA)', icon: 'https://cdn.simpleicons.org/xilinx/22d3ee' },
+    { name: 'ESP32-Microcontroller', icon: 'https://cdn.simpleicons.org/espressif/22d3ee' },
+    { name: 'PIC16F877A-Microcontroller', icon: 'https://cdn.simpleicons.org/microchiptechnology/22d3ee' },
+    { name: '8051-Microcontroller', icon: 'https://cdn.simpleicons.org/intel/22d3ee' },
+    { name: '8086-Microprocessor', icon: 'https://cdn.simpleicons.org/intel/22d3ee' },
   ],
   tools: [
-    { name: 'MATLAB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg' },
-    { name: 'Proteus', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/circuit/circuit-original.svg' },
-    { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'KiCAD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kicad/kicad-original.svg' }
+    { name: 'Cadence', icon: 'https://cdn.simpleicons.org/cadence/22d3ee' },
+    { name: 'Proteus', icon: 'https://cdn.simpleicons.org/circuitverse/22d3ee' },
+    { name: 'ModelSim', icon: 'https://cdn.simpleicons.org/siemens/22d3ee' },
+    { name: 'KiCAD', icon: 'https://cdn.simpleicons.org/kicad/22d3ee' },
+    { name: 'Keil µVision', icon: 'https://cdn.simpleicons.org/arm/22d3ee' },
+    { name: 'MATLAB', icon: 'https://cdn.simpleicons.org/mathworks/22d3ee' },
+   
+   
   ]
 };
 
@@ -27,6 +34,12 @@ const icons = {
   programming: Code,
   embedded: Microchip,
   tools: Settings
+};
+
+const categoryLabels = {
+  programming: 'Programming',
+  embedded: 'Hardware Platforms',
+  tools: 'Tools'
 };
 
 // Fallback icon component for skills without logos
@@ -69,7 +82,7 @@ const Skills = ({ id }) => {
               transition={{ delay: i * 0.2 }}
             >
               <Icon className="w-10 h-10 text-cyan-400 mx-auto mb-6" />
-              <h3 className="text-xl text-cyan-400 mb-6 capitalize text-center">{category}</h3>
+              <h3 className="text-xl text-cyan-400 mb-6 text-center">{categoryLabels[category] || category}</h3>
 
               {skills.map((skill, skillIndex) => (
                 <motion.div 

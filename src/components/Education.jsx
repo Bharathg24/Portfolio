@@ -6,29 +6,29 @@ const educationData = [
   {
     degree: 'Bachelor of Engineering',
     field: 'Electronics & Communication Engineering',
-    institution: 'Your University Name',
-    location: 'City, Country',
-    year: '2020 - 2024',
-    description: 'Specialized in embedded systems, IoT, and communication protocols.',
-    gpa: 'CGPA: 8.5/10'
+    institution: 'Kongu Engineering College',
+    location: 'Erode, Tamil Nadu',
+    year: '2023 - 2027',
+    description: 'Specialized in embedded systems, IoT, and VLSI design',
+    gpa: 'CGPA: 8.43/10 (till 5th semester)'
   },
   {
     degree: 'Higher Secondary Education',
-    field: 'Science Stream',
-    institution: 'Your School Name',
-    location: 'City, Country',
-    year: '2018 - 2020',
+    field: 'Bio-Maths',
+    institution: 'Government Model School',
+    location: 'Vellore, Tamil Nadu',
+    year: '2021 - 2023',
     description: 'Completed with focus on Physics, Chemistry, and Mathematics.',
-    gpa: 'Percentage: 85%'
+    gpa: 'Percentage: 89%'
   },
   {
     degree: 'Secondary Education',
     field: 'General Studies',
-    institution: 'Your School Name',
-    location: 'City, Country',
-    year: '2016 - 2018',
+    institution: 'Government Boys Higher Secondary School, K.V.Kuppam',
+    location: 'Vellore, Tamil Nadu',
+    year: '2016 - 2021',
     description: 'Foundation in science and mathematics.',
-    gpa: 'Percentage: 90%'
+    gpa: 'Percentage: 92%'
   }
 ];
 

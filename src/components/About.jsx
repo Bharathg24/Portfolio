@@ -6,29 +6,29 @@ const educationData = [
   {
     degree: 'Bachelor of Engineering',
     field: 'Electronics & Communication Engineering',
-    institution: 'Your University Name',
-    location: 'City, Country',
-    year: '2020 - 2024',
-    description: 'Specialized in embedded systems, IoT, and communication protocols.',
-    gpa: 'CGPA: 8.5/10'
+    institution: 'Kongu Engineering College',
+    location: 'Erode, Tamil Nadu',
+    year: '2023 - 2027',
+    description: 'Specialized in embedded systems, IoT, and VLSI design',
+    gpa: 'CGPA: 8.43/10 (till 5th semester)'
   },
   {
     degree: 'Higher Secondary Education',
-    field: 'Science Stream',
-    institution: 'Your School Name',
-    location: 'City, Country',
-    year: '2018 - 2020',
+    field: 'Bio-Maths',
+    institution: 'Government Model School',
+    location: 'Vellore, Tamil Nadu',
+    year: '2021 - 2023',
     description: 'Completed with focus on Physics, Chemistry, and Mathematics.',
-    gpa: 'Percentage: 85%'
+    gpa: 'Percentage: 89%'
   },
   {
     degree: 'Secondary Education',
     field: 'General Studies',
-    institution: 'Your School Name',
-    location: 'City, Country',
-    year: '2016 - 2018',
+    institution: 'Government Boys Higher Secondary School, K.V.Kuppam',
+    location: 'Vellore, Tamil Nadu',
+    year: '2016 - 2021',
     description: 'Foundation in science and mathematics.',
-    gpa: 'Percentage: 90%'
+    gpa: 'Percentage: 92%'
   }
 ];
 
@@ -57,30 +57,38 @@ const About = ({ id }) => {
         >
           <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
             <p>
-              Hello! I'm a passionate{' '}
-              <span className="text-cyan-400 font-semibold">
-                Electronics & Communication Engineer
-              </span>{' '}
-              with expertise in embedded systems, IoT development, and full-stack web applications.
+              I am an Electronics and Communication Engineering student with a strong foundation in digital electronics,
+              circuits and networks, VLSI, and embedded systems. I am passionate about designing efficient hardware-oriented
+              solutions by integrating digital logic, microcontrollers, and programmable devices.
             </p>
 
             <p>
-              I specialize in designing innovative solutions that bridge hardware and software —
-              from circuit design to cloud integration.
+              My technical interests lie in ARM Cortex-based systems, FPGA-based digital design using Verilog HDL, and
+              low-level microprocessor architecture.
             </p>
 
             <p>
-              I work with{' '}
-              <span className="text-emerald-400 font-semibold">
-                ESP32, Arduino, STM32
-              </span>{' '}
-              and modern web technologies to build real-world systems.
+              I have hands-on knowledge of ARM Cortex-M3 (LPC1768), ESP32, PIC16F877A, 8051 microcontroller, and 8086
+              microprocessor architectures. I am comfortable with embedded C programming, hardware interfacing, and
+              communication protocols such as UART, I2C, and SPI. I also have exposure to FPGA implementation, simulation
+              tools like ModelSim, and embedded development environments including Keil µVision and Proteus.
             </p>
 
             <p>
-              Outside of coding, I enjoy exploring new tech, open-source contributions,
-              and knowledge sharing.
+              My academic background has strengthened my understanding of digital system design, semiconductor fundamentals,
+              processor architecture, and system-level problem solving. I am highly motivated to build a career in core
+              electronics domains such as embedded systems, VLSI design, and hardware development, where I can contribute to
+              innovative and scalable engineering solutions.
             </p>
+
+            <p>
+              I am particularly interested in real-time system design, efficient firmware development, and optimizing
+              hardware performance for reliability and power efficiency. I continuously work on improving my understanding of
+              system architecture, interrupt handling, memory management, and peripheral configuration in embedded platforms.
+              With a strong analytical mindset and a practical approach to engineering challenges, I aim to contribute
+              meaningfully to advanced embedded and semiconductor technologies.
+            </p>
+
           </div>
         </motion.div>
 

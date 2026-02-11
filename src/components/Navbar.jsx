@@ -82,14 +82,9 @@ const Navbar = ({ activeSection }) => {
       {/* Custom Cursor */}
       <motion.div
         className="cursor"
-        animate={{
-          x: cursor.x,
-          y: cursor.y,
-        }}
-        transition={{ 
-          type: "tween",
-          duration: 0.1,
-          ease: "linear"
+        style={{
+          left: cursor.x,
+          top: cursor.y,
         }}
       />
     </>

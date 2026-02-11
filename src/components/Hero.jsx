@@ -78,7 +78,7 @@ const Hero = ({ id }) => {
           animate={{ scale: 1 }}
           transition={{ delay: 0.5, type: 'spring' }}
         >
-          <div className="text-xl md:text-2xl text-cyan-400 mb-6 font-mono tracking-wider text-center">
+          <div className="text-xl md:text-2xl text-cyan-400 mb-6 font-sans tracking-wider text-center">
             Electronics & Communication Engineer
           </div>
         </motion.div>
@@ -103,7 +103,8 @@ const Hero = ({ id }) => {
         >
           <ReactTyped
             strings={[
-              'Embedded Systems | IoT',
+              'Embedded Systems | IoT Engineer',
+              'VLSI Design Engineer',
               'Circuit Designer',
             ]}
             typeSpeed={60}

@@ -7,9 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'orbitron': ['Orbitron', 'sans-serif'],
-        'rajdhani': ['Rajdhani', 'sans-serif'],
-        'mono': ['JetBrains Mono', 'monospace'],
+        sans: ['sans-serif'],
       },
     },
   },
