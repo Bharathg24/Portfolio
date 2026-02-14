@@ -419,6 +419,48 @@ body::after {
   padding: 0.5rem 0;
 }
 
+.nav-link.active {
+  color: #22d3ee;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #34f5c5);
+}
+
+.resume-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #22d3ee;
+  color: #22d3ee;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-btn:hover {
+  background: rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.nav-link {
+  color: #9ca3af;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
 .nav-link:hover,
 .nav-link.active {
   color: #22d3ee;

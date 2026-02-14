@@ -28,7 +28,7 @@ const educationData = [
     location: 'Vellore, Tamil Nadu',
     year: '2016 - 2021',
     description: 'Foundation in science and mathematics.',
-    gpa: 'Percentage: 92%'
+    gpa: ''
   }
 ];
 
