@@ -7,23 +7,23 @@ const skillsData = {
     { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', color: '#A8B9CC' },
     { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: '#3776AB' },
     { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: '#007396' },
-    { name: 'Verilog HDL', icon: 'https://cdn.simpleicons.org/verilog/10B981', color: '#10B981' }
+    { name: 'Verilog HDL', icon: 'https://cdn.simpleicons.org/v/10B981', color: '#10B981' }
   ],
   embedded: [
     { name: 'ARM Cortex-M3 (LPC1768)', icon: 'https://cdn.simpleicons.org/arm/00BED6', color: '#00BED6' },
-    { name: 'Basys3 & PYNQ Z2 (FPGA)', icon: 'https://cdn.simpleicons.org/xilinx/E01F27', color: '#E01F27' },
+    { name: 'Basys3 & PYNQ Z2 (FPGA)', icon: 'https://cdn.simpleicons.org/amd/E01F27', color: '#E01F27' },
     { name: 'ESP32-Microcontroller', icon: 'https://cdn.simpleicons.org/espressif/E7352C', color: '#E7352C' },
     { name: 'PIC16F877A-Microcontroller', icon: 'https://cdn.simpleicons.org/microchip/EE3233', color: '#EE3233' },
     { name: '8051-Microcontroller', icon: 'https://cdn.simpleicons.org/intel/0071C5', color: '#0071C5' },
     { name: '8086-Microprocessor', icon: 'https://cdn.simpleicons.org/intel/0071C5', color: '#0071C5' },
   ],
   tools: [
-    { name: 'Cadence', icon: 'https://cdn.simpleicons.org/cadence/FF0000', color: '#FF0000' },
-    { name: 'Proteus', icon: 'https://cdn.simpleicons.org/proteusbiomedical/22D3EE', color: '#22D3EE' },
+    { name: 'Cadence', icon: 'https://cdn.simpleicons.org/c/FF0000', color: '#FF0000' },
+    { name: 'Proteus', icon: 'https://cdn.simpleicons.org/probot/22D3EE', color: '#22D3EE' },
     { name: 'ModelSim', icon: 'https://cdn.simpleicons.org/intel/0071C5', color: '#0071C5' },
     { name: 'KiCAD', icon: 'https://cdn.simpleicons.org/kicad/314CB0', color: '#314CB0' },
     { name: 'Keil µVision', icon: 'https://cdn.simpleicons.org/arm/00BED6', color: '#00BED6' },
-    { name: 'MATLAB', icon: 'https://cdn.simpleicons.org/mathworks/0076A8', color: '#0076A8' },
+    { name: 'MATLAB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg', color: '#0076A8' },
   ]
 };
 
