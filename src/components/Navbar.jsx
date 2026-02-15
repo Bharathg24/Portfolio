@@ -66,10 +66,13 @@ const Navbar = ({ activeSection }) => {
 
           {/* Desktop nav links */}
           <ul className="nav-links hidden md:flex gap-1 relative">
-            {navLinks.map((link) => (
-              <motion.li key={link.id} className="relative">
+            {navLinks.map((link, index) => (
+              <motion.li 
+                key={link.id} 
+                className="relative"
+              >
                 <motion.span
-                  className={`nav-link relative px-4 py-2 cursor-pointer transition-all duration-300 ${
+                  className={`nav-link relative px-4 py-2 cursor-pointer transition-all duration-300 block ${
                     activeSection === link.id 
                       ? 'text-cyan-400 font-semibold' 
                       : 'text-gray-300 hover:text-cyan-400'
@@ -78,13 +81,6 @@ const Navbar = ({ activeSection }) => {
                   whileHover={{ y: -2 }}
                 >
                   {link.label}
-                  {activeSection === link.id && (
-                    <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full"
-                      layoutId="navbar-indicator"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
                 </motion.span>
               </motion.li>
             ))}
@@ -117,16 +113,13 @@ const Navbar = ({ activeSection }) => {
             {navLinks.map((link) => (
               <li key={link.id} className="relative">
                 <span
-                  className={`nav-link text-xl cursor-pointer transition-all duration-300 ${
+                  className={`nav-link text-xl cursor-pointer transition-all duration-300 block ${
                     activeSection === link.id 
-                      ? 'text-cyan-400 font-semibold pl-4' 
-                      : 'text-gray-300 hover:text-cyan-400 hover:pl-2'
+                      ? 'text-cyan-400 font-semibold' 
+                      : 'text-gray-300 hover:text-cyan-400'
                   }`}
                   onClick={() => { scrollToSection(link.id); setMobileOpen(false); }}
                 >
-                  {activeSection === link.id && (
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-8 bg-gradient-to-b from-cyan-400 to-emerald-400 rounded-r-full" />
-                  )}
                   {link.label}
                 </span>
               </li>
