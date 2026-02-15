@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ReactTyped } from 'react-typed';
 import { Play, Download } from 'lucide-react';
+import heroImage from '../assets/1000042717~2.jpg';
+import resumePDF from '../assets/Resume_DEC.pdf';
 
 const Hero = ({ id }) => {
   return (
@@ -47,14 +49,9 @@ const Hero = ({ id }) => {
           <div className="relative">
             <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden border-2 border-cyan-400/60 shadow-2xl shadow-cyan-500/30 relative group">
               <img 
-                src="/profile-photo.jpg" 
+                src={heroImage} 
                 alt="Bharath G" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                onError={(e) => {
-                  // Fallback if image doesn't exist
-                  e.target.style.display = 'none';
-                  e.target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-cyan-500/30 to-emerald-500/30 flex items-center justify-center text-cyan-400 text-5xl font-bold">AP</div>';
-                }}
               />
               {/* Animated border glow */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/30 to-emerald-400/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
@@ -135,8 +132,8 @@ const Hero = ({ id }) => {
           </motion.button>
 
           <motion.a
-            href="/resume.pdf"
-            download
+            href={resumePDF}
+            download="Resume_DEC.pdf"
             className="btn btn-secondary text-lg px-8 py-4"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

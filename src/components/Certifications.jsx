@@ -1,32 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, CheckCircle } from 'lucide-react';
+import aiFoundationImg from '../assets/AI Foundation.png';
+import ssitImg from '../assets/SSIT.jpg';
 
 const certificationsData = [
   {
-    title: 'AWS Certified IoT Developer',
-    issuer: 'Amazon Web Services',
+    title: 'AI Foundation',
+    issuer: 'AI Foundation',
     date: '2025',
-    skills: ['IoT Core', 'AWS Lambda', 'Device Management'],
+    description: 'Comprehensive certification covering fundamental concepts of Artificial Intelligence, including machine learning algorithms, neural networks, and deep learning frameworks.',
+    skills: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning'],
+    image: aiFoundationImg,
   },
   {
-    title: 'Embedded Systems Certification',
-    issuer: 'Coursera',
-    date: '2024',
-    skills: ['ARM Cortex', 'RTOS', 'Bare Metal'],
+    title: 'SSIT Certification',
+    issuer: 'SSIT',
+    date: '2025',
+    description: 'Professional development certification focused on technical skills, software engineering practices, and industry-standard methodologies for modern technology solutions.',
+    skills: ['Technical Skills', 'Professional Development'],
+    image: ssitImg,
   },
-  {
-    title: 'PCB Design Professional',
-    issuer: 'Altium',
-    date: '2024',
-    skills: ['KiCAD', 'Eagle', 'Circuit Design'],
-  },
-  {
-    title: 'TensorFlow Developer Certificate',
-    issuer: 'Google',
-    date: '2024',
-    skills: ['Machine Learning', 'Neural Networks', 'TensorFlow'],
-  },
+  
 ];
 
 const Certifications = ({ id }) => {
@@ -54,12 +49,21 @@ const Certifications = ({ id }) => {
             transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.03 }}
           >
+            {cert.image ? (
+              <div className="mb-4">
+                <img 
+                  src={cert.image} 
+                  alt={cert.title} 
+                  className="w-full h-64 object-contain bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-lg border-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors p-4"
+                />
+              </div>
+            ) : null}
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                 <Award className="w-6 h-6 text-cyan-400" />
               </div>
 
-              <div>
+              <div className="flex-1">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">
                   {cert.title}
                 </h3>
@@ -67,6 +71,12 @@ const Certifications = ({ id }) => {
                 <p className="text-gray-400 text-sm mb-3">
                   {cert.issuer} • {cert.date}
                 </p>
+
+                {cert.description && (
+                  <p className="text-gray-300 text-sm mb-3 line-clamp-2">
+                    {cert.description}
+                  </p>
+                )}
 
                 <div className="flex flex-wrap gap-2">
                   {cert.skills.map(skill => (

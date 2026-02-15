@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
+import resumePDF from '../assets/Resume_DEC.pdf';
 
 const Navbar = ({ activeSection }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -78,15 +79,16 @@ const Navbar = ({ activeSection }) => {
             ))}
           </ul>
 
-          <motion.button
+          <motion.a
+            href={resumePDF}
+            download="Resume_DEC.pdf"
             className="resume-btn hidden md:inline-flex"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('/resume.pdf', '_blank')}
           >
             <Download className="w-4 h-4 inline mr-2" />
             Resume
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Mobile nav drawer */}
@@ -111,12 +113,13 @@ const Navbar = ({ activeSection }) => {
                 </span>
               </li>
             ))}
-            <button
-              className="resume-btn mt-8 w-full"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+            <a
+              href={resumePDF}
+              download="Resume_DEC.pdf"
+              className="resume-btn mt-8 w-full block text-center"
             >
               <Download className="w-5 h-5 inline mr-2" /> Resume
-            </button>
+            </a>
           </ul>
         </div>
       </nav>
