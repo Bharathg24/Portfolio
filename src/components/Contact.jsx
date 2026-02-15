@@ -8,7 +8,9 @@ import {
   Github,
   Linkedin,
   Instagram,
+  MessageCircle,
 } from 'lucide-react';
+import { socialLinks } from '../utils/data';
 
 const Contact = ({ id }) => {
   const [formData, setFormData] = useState({
@@ -65,7 +67,7 @@ const Contact = ({ id }) => {
               </div>
               <div>
                 <h3 className="font-semibold text-white mb-1">Email</h3>
-                <p className="text-gray-400">bharathguna144@gmail.com</p>
+                <p className="text-gray-400">{socialLinks.email}</p>
               </div>
             </div>
           </div>
@@ -78,7 +80,7 @@ const Contact = ({ id }) => {
               </div>
               <div>
                 <h3 className="font-semibold text-white mb-1">Phone</h3>
-                <p className="text-gray-400">+91 9344192707</p>
+                <p className="text-gray-400">{socialLinks.phone}</p>
               </div>
             </div>
           </div>
@@ -98,11 +100,11 @@ const Contact = ({ id }) => {
 
           {/* Social Links */}
           <div className="flex gap-4 flex-wrap">
-            <SocialIcon Icon={Mail} href="mailto:arjun.patel@example.com" />
-            <SocialIcon Icon={Github} href="https://github.com" />
-            <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
-            <SocialIcon Icon={Instagram} href="https://instagram.com" />
-            <LeetCodeSocialIcon href="https://leetcode.com" />
+            <SocialIcon Icon={MessageCircle} href={socialLinks.whatsapp} />
+            <SocialIcon Icon={Github} href={socialLinks.github} />
+            <SocialIcon Icon={Linkedin} href={socialLinks.linkedin} />
+            <SocialIcon Icon={Instagram} href={socialLinks.instagram} />
+            <LeetCodeSocialIcon href={socialLinks.leetcode} />
           </div>
         </motion.div>
 

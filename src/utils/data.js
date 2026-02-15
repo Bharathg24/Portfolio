@@ -31,3 +31,13 @@ export const certifications = [
     date: "2024"
   }
 ];
+
+export const socialLinks = {
+  github: "https://github.com/Bharathg24",
+  linkedin: "https://linkedin.com/in/bharathg06/",
+  leetcode: "https://leetcode.com/u/Bharathg23ECR024/",
+  instagram: "https://instagram.com/bharath._.24",
+  whatsapp: "https://wa.me/919344192707",
+  email: "bharathguna144@gmail.com",
+  phone: "+91 9344192707"
+};

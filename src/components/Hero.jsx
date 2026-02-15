@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ReactTyped } from 'react-typed';
-import { Play, Download } from 'lucide-react';
+import { Play, Download, Github, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 import heroImage from '../assets/1000042717~2.jpg';
 import resumePDF from '../assets/Resume_DEC.pdf';
+import { socialLinks } from '../utils/data';
 
 const Hero = ({ id }) => {
   return (
@@ -39,6 +40,45 @@ const Hero = ({ id }) => {
       ></motion.div>
 
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-[auto_1fr] gap-12 items-center relative z-10">
+        {/* Vertical Social Sidebar - Fixed on Left Side */}
+        <motion.div
+          className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 bg-gray-900/80 backdrop-blur-md p-4 rounded-3xl border border-gray-700/50 shadow-2xl">
+            <SocialIconButton 
+              Icon={MessageCircle} 
+              href={socialLinks.whatsapp}
+              color="emerald"
+              label="WhatsApp"
+            />
+            <SocialIconButton 
+              Icon={Linkedin} 
+              href={socialLinks.linkedin}
+              color="blue"
+              label="LinkedIn"
+            />
+            <SocialIconButton 
+              Icon={Github} 
+              href={socialLinks.github}
+              color="gray"
+              label="GitHub"
+            />
+            <LeetCodeIconButton 
+              href={socialLinks.leetcode}
+              label="LeetCode"
+            />
+            <SocialIconButton 
+              Icon={Instagram} 
+              href={socialLinks.instagram}
+              color="pink"
+              label="Instagram"
+            />
+          </div>
+        </motion.div>
+
         {/* Photo Section - Left Side */}
         <motion.div
           className="flex justify-start"
@@ -149,5 +189,46 @@ const Hero = ({ id }) => {
     </section>
   );
 };
+
+/* Social Icon Button Component */
+const SocialIconButton = ({ Icon, href, color, label }) => {
+  const colorClasses = {
+    emerald: 'text-emerald-400 hover:bg-emerald-500/20 hover:shadow-emerald-500/50',
+    blue: 'text-blue-400 hover:bg-blue-500/20 hover:shadow-blue-500/50',
+    gray: 'text-gray-400 hover:bg-gray-500/20 hover:shadow-gray-500/50',
+    pink: 'text-pink-400 hover:bg-pink-500/20 hover:shadow-pink-500/50',
+  };
+
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClasses[color]}`}
+      whileHover={{ scale: 1.15, rotate: 5 }}
+      whileTap={{ scale: 0.95 }}
+      title={label}
+    >
+      <Icon className="w-6 h-6" />
+    </motion.a>
+  );
+};
+
+/* LeetCode Icon Button Component */
+const LeetCodeIconButton = ({ href, label }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 text-yellow-400 hover:bg-yellow-500/20 hover:shadow-yellow-500/50"
+    whileHover={{ scale: 1.15, rotate: 5 }}
+    whileTap={{ scale: 0.95 }}
+    title={label}
+  >
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.3 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.101-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.522 2.545 2.545 0 0 1 .619-1.164L9.13 8.114l1.588-1.6 7.689-7.699a1.374 1.374 0 0 0 0-1.943L13.483.439A1.374 1.374 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0 1.951 0l5.911-5.922a1.38 1.38 0 0 0 0-1.951 1.38 1.38 0 0 0-1.951 0l-5.911 5.922a1.38 1.38 0 0 0 0 1.951z"/>
+    </svg>
+  </motion.a>
+);
 
 export default Hero;
