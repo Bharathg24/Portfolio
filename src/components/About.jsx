@@ -21,15 +21,7 @@ const educationData = [
     description: 'Completed with focus on Physics, Chemistry, and Mathematics.',
     gpa: 'Percentage: 89%'
   },
-  {
-    degree: 'Secondary Education',
-    field: 'General Studies',
-    institution: 'Government Boys Higher Secondary School, K.V.Kuppam',
-    location: 'Vellore, Tamil Nadu',
-    year: '2016 - 2021',
-    description: 'Foundation in science and mathematics.',
-    gpa: ''
-  }
+  
 ];
 
 const About = ({ id }) => {
@@ -57,36 +49,19 @@ const About = ({ id }) => {
         >
           <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
             <p>
-              I am an Electronics and Communication Engineering student with a strong foundation in digital electronics,
-              circuits and networks, VLSI, and embedded systems. I am passionate about designing efficient hardware-oriented
-              solutions by integrating digital logic, microcontrollers, and programmable devices.
+              I'm an Electronics and Communication Engineering student passionate about embedded systems, VLSI design, and digital electronics. I love building hardware solutions using microcontrollers and programmable devices.
             </p>
 
             <p>
-              My technical interests lie in ARM Cortex-based systems, FPGA-based digital design using Verilog HDL, and
-              low-level microprocessor architecture.
+              I specialize in ARM Cortex-based systems, FPGA design with Verilog HDL, and microprocessor architecture. I have practical experience with various microcontrollers including LPC1768, ESP32, PIC16F877A, 8051, and 8086.
             </p>
 
             <p>
-              I have hands-on knowledge of ARM Cortex-M3 (LPC1768), ESP32, PIC16F877A, 8051 microcontroller, and 8086
-              microprocessor architectures. I am comfortable with embedded C programming, hardware interfacing, and
-              communication protocols such as UART, I2C, and SPI. I also have exposure to FPGA implementation, simulation
-              tools like ModelSim, and embedded development environments including Keil µVision and Proteus.
+              My skills include embedded C programming, hardware interfacing, and communication protocols like UART, I2C, and SPI. I work with tools such as ModelSim, Keil µVision, and Proteus for development and simulation.
             </p>
 
             <p>
-              My academic background has strengthened my understanding of digital system design, semiconductor fundamentals,
-              processor architecture, and system-level problem solving. I am highly motivated to build a career in core
-              electronics domains such as embedded systems, VLSI design, and hardware development, where I can contribute to
-              innovative and scalable engineering solutions.
-            </p>
-
-            <p>
-              I am particularly interested in real-time system design, efficient firmware development, and optimizing
-              hardware performance for reliability and power efficiency. I continuously work on improving my understanding of
-              system architecture, interrupt handling, memory management, and peripheral configuration in embedded platforms.
-              With a strong analytical mindset and a practical approach to engineering challenges, I aim to contribute
-              meaningfully to advanced embedded and semiconductor technologies.
+              I'm focused on real-time systems, firmware development, and optimizing hardware for better performance and efficiency. My goal is to contribute to innovative embedded systems and semiconductor technologies.
             </p>
 
           </div>

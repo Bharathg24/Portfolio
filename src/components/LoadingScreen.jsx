@@ -68,7 +68,7 @@ const LoadingScreen = ({ onComplete }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
       >
-        BHARATH G
+        <span style={{ fontFamily: 'Orbitron, sans-serif', letterSpacing: '0.1em' }}>BHARATH G ⚡</span>
       </motion.div>
 
       {/* Progress Bar */}

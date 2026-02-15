@@ -13,14 +13,7 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-gray-400 flex items-center justify-center gap-2">
-            Made with
-            <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-            by
-            <span className="text-cyan-400 font-semibold">
-              Arjun Patel
-            </span>
-          </p>
+          
 
           <p className="text-gray-500 text-sm mt-2">
             © {new Date().getFullYear()} All rights reserved.

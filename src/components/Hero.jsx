@@ -88,7 +88,7 @@ const Hero = ({ id }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          Hi, I'm <span className="text-emerald-400 bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent" style={{ color: '#34f5c5' }}>Bharath G</span>
+          Hi, I'm <span className="text-emerald-400 bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent font-['Orbitron'] tracking-wider" style={{ color: '#34f5c5', fontFamily: 'Orbitron, sans-serif' }}>Bharath G ⚡</span>
         </motion.h1>
 
         {/* Typed text */}
@@ -145,20 +145,7 @@ const Hero = ({ id }) => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center">
-          <motion.div
-            className="w-1 h-3 bg-cyan-400 rounded-full mt-2"
-            animate={{ y: [0, 15, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
+      
     </section>
   );
 };

@@ -52,7 +52,7 @@ const Navbar = ({ activeSection }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-emerald-400">BHARATH G</span>
+            <span className="text-emerald-400 font-bold tracking-wider" style={{ fontFamily: 'Orbitron, sans-serif' }}>BHARATH G ⚡</span>
           </motion.div>
 
           {/* Hamburger for mobile */}
