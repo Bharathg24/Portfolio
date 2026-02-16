@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 function MainApp() {
   const [activeSection, setActiveSection] = useState('home');
@@ -35,6 +36,7 @@ function MainApp() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#020617', color: '#ffffff', paddingTop: '70px' }}>
+      <CustomCursor />
       <Navbar activeSection={activeSection} />
       <Hero id="home" />
       <About id="about" />

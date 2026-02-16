@@ -12,6 +12,14 @@ html, body {
   min-height: 100vh;
   width: 100%;
   height: 100%;
+  cursor: none; /* Hide default cursor for custom cursor effect */
+}
+
+/* Show default cursor on mobile devices */
+@media (max-width: 768px) {
+  html, body {
+    cursor: auto;
+  }
 }
 
 #root {
