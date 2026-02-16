@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Received - Sanjay N</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Inter', sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #0a0a0a;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(34, 197, 94, 0.15);
+      border: 1px solid #1f2937;
+    }
+    .header {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      background: #000;
+      padding: 6px;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+      border: 1px solid #10b981;
+    }
+    .header-text {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .content {
+      padding: 50px 40px;
+      color: #e0e0e0;
+      text-align: center;
+    }
+    .hi {
+      font-size: 32px;
+      font-weight: 700;
+      color: #10b981;
+      margin: 0 0 16px;
+    }
+    .message-box {
+      background: #111827;
+      border: 2px solid #10b981;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 30px 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #d1d5db;
+      border: 1px solid #374151;
+    }
+    .cyan-text {
+      color: #10b981;
+      font-weight: 700;
+    }
+    .footer {
+      background: #0a0a0a;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #374151;
+    }
+    .social {
+      margin: 20px 0;
+    }
+    .social a {
+      display: inline-block;
+      margin: 0 12px;
+      text-decoration: none;
+      color: #10b981;
+      font-weight: 600;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      background: #10b981;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+    /* Mobile Responsive Styles */
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px 10px;
+        border-radius: 16px;
+      }
+      .header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-text {
+        text-align: center;
+        max-width: 100%;
+        margin-top: 15px;
+        font-size: 2rem;
+        margin-left: 0;
+      }
+      .content {
+        padding: 30px 20px;
+      }
+      .hi {
+        font-size: 28px;
+      }
+      .message-box {
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .footer {
+        padding: 20px;
+      }
+      .social a {
+        margin: 0 8px;
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Star symbol -->
+          <path
+            d="M50 10
+               L61 38
+               L90 38
+               L66 56
+               L75 85
+               L50 67
+               L25 85
+               L34 56
+               L10 38
+               L39 38
+               Z"
+            fill="#10b981"
+            stroke="#10b981"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div class="header-text">
+        BHARAT
+      </div>
+    </div>
+    <div class="content">
+      <h1 class="hi">Hi {{name}},</h1>
+      <p style="font-size:18px; margin:20px 0;">
+        Your message just <span class="cyan-text">landed in my inbox</span> — and I'm already excited!
+      </p>
+      <div class="message-box">
+        "{{message}}"
+      </div>
+      <p style="font-size:18px; margin:30px 0;">
+        I'll review it right now.<br>
+        <span class="cyan-text">Expect a reply soon</span> — probably within 24 hours
+      </p>
+      <p style="font-size:16px; color:#9ca3af; margin-top:40px;">
+        Thanks for reaching out.<br>
+        <span class="cyan-text">Let's build something great</span>
+      </p>
+      <p style="font-size:14px; color:#6b7280; margin-top:20px;">
+        From: {{email}} | Mobile: {{mobile}}
+      </p>
+    </div>
+    <div class="footer">
+      <p style="margin:0 0 20px; color:#6b7280; font-size:14px;">
+        <strong>Bharat</strong> — Building the Future
+      </p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/bharathguna144">LinkedIn</a>
+        <a href="https://github.com/bharathguna144">GitHub</a>
+      </div>
+      <p style="margin:20px 0 0; color:#4b5563; font-size:12px;">
+        © 2026 Bharat • Personal Portfolio
+      </p>
+    </div>
+  </div>
+</body>
+</html>

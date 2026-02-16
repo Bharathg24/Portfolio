@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import {
   Mail,
@@ -13,156 +15,278 @@ import {
 import { socialLinks } from '../utils/data';
 
 const Contact = ({ id }) => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '', // This will be used for mobile number
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent! (Demo)');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Updated Public Key
+    const publicKey = 'pjZINLDJidXJFx3zT';
+
+    // Updated Template IDs
+    const adminTemplateId = 'template_1tescpa'; // Admin notification template
+    const userTemplateId = 'template_jz2h3yb'; // User confirmation template
+
+    // Updated Service ID
+    const serviceId = 'service_uj1xnlx';
+
+    try {
+      // Send notification to admin (bharathguna144@gmail.com)
+      await emailjs.send(
+        serviceId,
+        adminTemplateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.subject, // Using 'subject' field as mobile
+          message: formData.message,
+          from_email: 'bharathguna144@gmail.com', // Admin email as sender
+          time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) // Dynamic timestamp for admin template
+        },
+        publicKey
+      );
+
+      // Send confirmation to user
+      await emailjs.send(
+        serviceId, // Same service ID
+        userTemplateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.subject,
+          message: formData.message,
+          from_email: 'bharathguna144@gmail.com' // Admin email as sender
+        },
+        publicKey
+      );
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    } catch (error) {
+      console.error('Full EmailJS Error:', error);
+      console.error('Status:', error.status);
+      console.error('Text:', error.text);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Timeout only on success
+      if (submitStatus === 'success') {
+        setTimeout(() => setSubmitStatus(null), 5000);
+      }
+    }
   };
 
   return (
-    <section id={id} className="section py-20">
-      {/* Heading */}
-      <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="h2">Get In Touch</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mt-4 rounded-full" />
-        <p className="text-gray-400 mt-6 text-lg">
-          Let's discuss your next project
-        </p>
-      </motion.div>
-
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-        {/* Contact Info */}
+    <>
+      <Helmet>
+        <title>Sanjay N | Contact</title>
+        <meta
+          name="description"
+          content="Get in touch with Sanjay N for collaboration, freelance projects, or inquiries. Connect via email, LinkedIn, or the contact form."
+        />
+        <meta property="og:title" content="Contact Sanjay N | Get In Touch" />
+        <meta property="og:description" content="Get in touch with Sanjay N for collaboration, freelance projects, or inquiries." />
+        <meta property="og:url" content="https://sanjayn.me/#contact" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      
+      <section id={id} ref={sectionRef} className="section py-20">
+        {/* Heading */}
         <motion.div
-          className="space-y-8"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* Email */}
-          <div className="card p-6 group">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Mail className="w-6 h-6 text-cyan-400" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Email</h3>
-                <p className="text-gray-400">{socialLinks.email}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Phone */}
-          <div className="card p-6 group">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Phone className="w-6 h-6 text-emerald-400" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Phone</h3>
-                <p className="text-gray-400">{socialLinks.phone}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Location */}
-          <div className="card p-6 group">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <MapPin className="w-6 h-6 text-purple-400" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Location</h3>
-                <p className="text-gray-400">Vellore, Tamil Nadu, India</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex gap-4 flex-wrap">
-            <SocialIcon Icon={MessageCircle} href={socialLinks.whatsapp} />
-            <SocialIcon Icon={Github} href={socialLinks.github} />
-            <SocialIcon Icon={Linkedin} href={socialLinks.linkedin} />
-            <SocialIcon Icon={Instagram} href={socialLinks.instagram} />
-            <LeetCodeSocialIcon href={socialLinks.leetcode} />
-          </div>
+          <h2 className="h2">Get In Touch</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mt-4 rounded-full" />
+          <p className="text-gray-400 mt-6 text-lg">
+            Let's discuss your next project
+          </p>
         </motion.div>
 
-        {/* Contact Form */}
-        <motion.div
-          className="card p-8"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <InputField
-              label="Name"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your name"
-            />
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Email */}
+            <div className="card p-6 group">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Mail className="w-6 h-6 text-cyan-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">Email</h3>
+                  <p className="text-gray-400">{socialLinks.email}</p>
+                </div>
+              </div>
+            </div>
 
-            <InputField
-              label="Email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="your.email@example.com"
-            />
+            {/* Phone */}
+            <div className="card p-6 group">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone className="w-6 h-6 text-emerald-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">Phone</h3>
+                  <p className="text-gray-400">{socialLinks.phone}</p>
+                </div>
+              </div>
+            </div>
 
-            <div>
-              <label className="block text-gray-300 mb-2 font-medium">
-                Message
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
+            {/* Location */}
+            <div className="card p-6 group">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <MapPin className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">Location</h3>
+                  <p className="text-gray-400">Vellore, Tamil Nadu, India</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-4 flex-wrap">
+              <SocialIcon Icon={MessageCircle} href={socialLinks.whatsapp} />
+              <SocialIcon Icon={Github} href={socialLinks.github} />
+              <SocialIcon Icon={Linkedin} href={socialLinks.linkedin} />
+              <SocialIcon Icon={Instagram} href={socialLinks.instagram} />
+              <LeetCodeSocialIcon href={socialLinks.leetcode} />
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            className="card p-8"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <InputField
+                label="Name"
+                type="text"
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none text-white resize-none"
-                placeholder="Your message..."
+                placeholder="Your name"
               />
-            </div>
 
-            <motion.button
-              type="submit"
-              className="w-full py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-black font-semibold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Send className="w-5 h-5" />
-              Send Message
-            </motion.button>
-          </form>
-        </motion.div>
-      </div>
-    </section>
+              <InputField
+                label="Email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your.email@example.com"
+              />
+
+              <InputField
+                label="Mobile Number"
+                type="tel"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="+91 1234567890"
+              />
+
+              <div>
+                <label className="block text-gray-300 mb-2 font-medium">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:border-cyan-400 focus:outline-none text-white resize-none"
+                  placeholder="Your message..."
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-black font-semibold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
+              </motion.button>
+
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-center">
+                  Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center">
+                  Failed to send message. Please try again.
+                </div>
+              )}
+            </form>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 };
 
