@@ -4,34 +4,38 @@ import { ExternalLink, Github, Zap } from 'lucide-react';
 
 const projectsData = [
   {
-    title: 'IoT Home Automation',
+    title: 'Fabric Defect Detection System',
     description:
-      'ESP32-based smart home system with mobile app control, voice commands, and energy monitoring.',
-    tech: ['ESP32', 'MQTT', 'React Native', 'Firebase'],
+      'AI-based system that detects fabric defects in real time using deep learning. Implemented YOLO with PyTorch to identify defects like holes and stains, improving textile quality inspection accuracy and efficiency.',
+    tech: ['YOLO', 'PyTorch', 'Deep Learning', 'Computer Vision'],
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Health Monitoring Wearable',
+    title: 'Smart Home Door Lock System',
     description:
-      'Wearable device for real-time heart rate, SpO2, and temperature monitoring with cloud analytics.',
-    tech: ['Arduino', 'Bluetooth', 'Python', 'Machine Learning'],
+      'Secure door access control system with dual authentication. Uses RFID cards and keypad-based PIN verification with ESP32 to control a solenoid lock, enhancing home security.',
+    tech: ['ESP32', 'RFID', 'Keypad', 'Solenoid Lock'],
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Smart Traffic System',
+    title: 'AI-Based Smart Agriculture Monitoring System',
     description:
-      'AI-powered traffic management system using computer vision and adaptive signal control.',
-    tech: ['Raspberry Pi', 'OpenCV', 'TensorFlow', 'MQTT'],
+      'Intelligent monitoring system for precision agriculture. Analyzes environmental and sensor data using AI to monitor crop conditions and support better irrigation and farming decisions.',
+    tech: ['AI/ML', 'IoT Sensors', 'Data Analytics', 'Precision Agriculture'],
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Industrial Automation Dashboard',
+    title: 'Offline Voice-Activated Home Automation System',
     description:
-      'Real-time monitoring dashboard for industrial sensors with predictive maintenance alerts.',
-    tech: ['STM32', 'Modbus', 'React', 'Node.js'],
+      'Voice-controlled appliance automation without internet dependency. Uses Seedgrove Voice Recognition Module and ESP32 to control home appliances completely offline, ensuring privacy and reliability.',
+    tech: ['ESP32', 'Voice Recognition', 'Offline Processing', 'Home Automation'],
+    image: 'https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=600&h=400&fit=crop',
     github: '#',
     demo: '#',
   },
@@ -57,16 +61,26 @@ const Projects = ({ id }) => {
         {projectsData.map((project, index) => (
           <motion.div
             key={index}
-            className="card group"
+            className="card group overflow-hidden"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -8 }}
           >
+            {/* Project Image */}
+            <div className="relative overflow-hidden rounded-lg mb-4 h-48">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+            </div>
+
             {/* Header */}
             <div className="flex items-start justify-between mb-4">
-              <Zap className="w-12 h-12 text-cyan-400 neon-glow" />
+              <Zap className="w-10 h-10 text-cyan-400 neon-glow" />
 
               <div className="flex gap-3">
                 <a
