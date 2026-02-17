@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import {
@@ -111,20 +110,7 @@ const Contact = ({ id }) => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>Contact Bharath G | Full Stack Developer</title>
-        <meta
-          name="description"
-          content="Get in touch with Bharath G for collaboration, AI/ML projects, embedded systems development, or inquiries. Connect via email, LinkedIn, or contact form."
-        />
-        <meta property="og:title" content="Contact Bharath G | Get In Touch" />
-        <meta property="og:description" content="Get in touch with Bharath G for collaboration, AI/ML projects, embedded systems development, or inquiries." />
-        <meta property="og:url" content="https://www.bharathg.me/#contact" />
-        <meta property="og:type" content="website" />
-      </Helmet>
-      
-      <section id={id} ref={sectionRef} className="section py-20">
+    <section id={id} ref={sectionRef} className="section py-20">
         {/* Heading */}
         <motion.div
           className="text-center mb-16"
@@ -286,7 +272,6 @@ const Contact = ({ id }) => {
           </motion.div>
         </div>
       </section>
-    </>
   );
 };
 
