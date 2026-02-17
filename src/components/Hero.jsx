@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ReactTyped } from 'react-typed';
 import { Play, Download, Github, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 import heroImage from '../assets/1000042717~2.jpg';
-import resumePDF from '../assets/Resume_DEC.pdf';
+import resumePDF from '../assets/Bharath G_Resume.pdf';
 import { socialLinks } from '../utils/data';
 
 const Hero = ({ id }) => {
@@ -174,7 +174,7 @@ const Hero = ({ id }) => {
 
           <motion.a
             href={resumePDF}
-            download="Resume_DEC.pdf"
+            download="Bharath G_Resume.pdf"
             className="btn btn-secondary text-lg px-8 py-4"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
