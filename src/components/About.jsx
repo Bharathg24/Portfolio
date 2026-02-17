@@ -103,7 +103,7 @@ const About = ({ id }) => {
                     {/* Content Row */}
                     <div className="md:flex md:items-start md:justify-between">
                       {/* Left Card (desktop) / Stacked (mobile) */}
-                      <div className={`md:w-[46%] ${isLeft ? 'md:pr-10' : 'md:pr-10 md:opacity-0 md:pointer-events-none'}`}>
+                      <div className={`hidden md:block md:w-[46%] ${isLeft ? 'md:pr-10' : 'md:pr-10 md:opacity-0 md:pointer-events-none'}`}>
                         {isLeft && (
                           <motion.div
                             className="card p-5 group ml-12 md:ml-0"
@@ -140,7 +140,7 @@ const About = ({ id }) => {
                       </div>
 
                       {/* Right Card */}
-                      <div className={`md:w-[46%] ${!isLeft ? 'md:pl-10' : 'md:pl-10 md:opacity-0 md:pointer-events-none'}`}>
+                      <div className={`hidden md:block md:w-[46%] ${!isLeft ? 'md:pl-10' : 'md:pl-10 md:opacity-0 md:pointer-events-none'}`}>
                         {!isLeft && (
                           <motion.div
                             className="card p-5 group ml-12 md:ml-0"

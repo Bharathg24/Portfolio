@@ -38,7 +38,7 @@ const Certifications = ({ id }) => {
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mt-4 rounded-full" />
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto px-4">
         {certificationsData.map((cert, index) => (
           <motion.div
             key={cert.title}

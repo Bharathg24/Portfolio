@@ -13,7 +13,7 @@ const skillsData = {
     { name: 'ARM Cortex-M3 (LPC1768)', icon: 'https://cdn.simpleicons.org/arm/00BED6', color: '#00BED6' },
     { name: 'Basys3 & PYNQ Z2 (FPGA)', icon: 'https://cdn.simpleicons.org/amd/E01F27', color: '#E01F27' },
     { name: 'ESP32-Microcontroller', icon: 'https://cdn.simpleicons.org/espressif/E7352C', color: '#E7352C' },
-    { name: 'PIC16F877A-Microcontroller', icon: 'https://cdn.simpleicons.org/microchip/EE3233', color: '#EE3233' },
+    { name: 'PIC16F877A-Microcontroller', icon: 'https://img.icons8.com/color/96/memory-slot.png', color: '#EE3233' },
     { name: '8051-Microcontroller', icon: 'https://cdn.simpleicons.org/intel/0071C5', color: '#0071C5' },
     { name: '8086-Microprocessor', icon: 'https://cdn.simpleicons.org/intel/0071C5', color: '#0071C5' },
   ],
@@ -77,7 +77,7 @@ const Skills = ({ id }) => {
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mt-4 rounded-full" />
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
         {Object.entries(skillsData).map(([category, skills], i) => {
           const Icon = icons[category];
 

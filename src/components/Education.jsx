@@ -46,7 +46,7 @@ const Education = ({ id }) => {
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mt-4 rounded-full" />
       </motion.div>
 
-      <div className="max-w-4xl mx-auto relative">
+      <div className="max-w-4xl mx-auto px-4 relative">
         {/* Timeline Line */}
         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-emerald-400 to-cyan-400 transform md:-translate-x-1/2"></div>
 

@@ -39,7 +39,7 @@ const Hero = ({ id }) => {
         }}
       ></motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-[auto_1fr] gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-[auto_1fr] gap-12 items-center justify-items-center relative z-10">
         {/* Vertical Social Sidebar - Fixed on Left Side */}
         <motion.div
           className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
@@ -81,7 +81,7 @@ const Hero = ({ id }) => {
 
         {/* Photo Section - Left Side */}
         <motion.div
-          className="flex justify-start"
+          className="flex justify-center md:justify-start"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
