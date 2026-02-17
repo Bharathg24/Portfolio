@@ -5,6 +5,15 @@ import aiFoundationImg from '../assets/AI Foundation.png';
 import ssitImg from '../assets/SSIT.jpg';
 
 const certificationsData = [
+  
+   {
+    title: 'SSIT Certification',
+    issuer: 'SSIT',
+    date: '2025',
+    description: 'Professional development certification focused on technical skills, software engineering practices, and industry-standard methodologies for modern technology solutions.',
+    skills: ['Technical Skills', 'Professional Development'],
+    image: ssitImg,
+  },
   {
     title: 'AI Foundation',
     issuer: 'AI Foundation',
@@ -13,14 +22,7 @@ const certificationsData = [
     skills: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning'],
     image: aiFoundationImg,
   },
-  {
-    title: 'SSIT Certification',
-    issuer: 'SSIT',
-    date: '2025',
-    description: 'Professional development certification focused on technical skills, software engineering practices, and industry-standard methodologies for modern technology solutions.',
-    skills: ['Technical Skills', 'Professional Development'],
-    image: ssitImg,
-  },
+ 
   
 ];
 
