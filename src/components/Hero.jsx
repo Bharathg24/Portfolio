@@ -109,28 +109,28 @@ const Hero = ({ id }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
+        {/* Name */}
+        <motion.h1
+          className="h1 mb-6 text-center"
+          style={{ color: '#ffffff' }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          Hi, I'm <span className="text-emerald-400 bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent font-['Orbitron'] tracking-wider" style={{ color: '#34f5c5', fontFamily: 'Orbitron, sans-serif' }}>Bharath G ⚡</span>
+        </motion.h1>
+
         {/* Subtitle */}
         <motion.div
           className="mb-6 w-full"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 0.5, type: 'spring' }}
+          transition={{ delay: 0.8, type: 'spring' }}
         >
           <div className="text-xl md:text-2xl text-cyan-400 mb-6 font-sans tracking-wider text-center">
             Electronics & Communication Engineer
           </div>
         </motion.div>
-
-        {/* Name */}
-        <motion.h1
-          className="h1 mb-8 text-center"
-          style={{ color: '#ffffff' }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-        >
-          Hi, I'm <span className="text-emerald-400 bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent font-['Orbitron'] tracking-wider" style={{ color: '#34f5c5', fontFamily: 'Orbitron, sans-serif' }}>Bharath G ⚡</span>
-        </motion.h1>
 
         {/* Typed text */}
         <motion.div
