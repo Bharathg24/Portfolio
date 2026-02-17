@@ -110,8 +110,7 @@ const Contact = ({ id }) => {
   };
 
   return (
-    <>
-      <section id={id} ref={sectionRef} className="section py-20">
+    <section id={id} ref={sectionRef} className="section py-20">
         {/* Heading */}
         <motion.div
           className="text-center mb-16"
@@ -273,7 +272,6 @@ const Contact = ({ id }) => {
           </motion.div>
         </div>
       </section>
-    </>
   );
 };
 

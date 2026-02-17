@@ -93,7 +93,7 @@ const Navbar = ({ activeSection }) => {
 
           <motion.a
             href={resumePDF}
-            download="Resume_DEC.pdf"
+            download="Bharath_G_Resume.pdf"
             className="resume-btn hidden md:inline-flex"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -136,7 +136,7 @@ const Navbar = ({ activeSection }) => {
             ))}
             <a
               href={resumePDF}
-              download="Resume_DEC.pdf"
+              download="Bharath_G_Resume.pdf"
               className="resume-btn mt-8 w-full block text-center"
             >
               <Download className="w-5 h-5 inline mr-2" /> Resume
