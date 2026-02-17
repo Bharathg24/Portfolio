@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
-import resumePDF from '../assets/Bharath G_Resume.pdf';
+
 
 const Navbar = ({ activeSection }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -92,7 +92,7 @@ const Navbar = ({ activeSection }) => {
           </ul>
 
           <motion.a
-            href={resumePDF}
+            href="/Bharath G_Resume.pdf"
             download="Bharath G_Resume.pdf"
             className="resume-btn hidden md:inline-flex"
             whileHover={{ scale: 1.05 }}
@@ -135,7 +135,7 @@ const Navbar = ({ activeSection }) => {
               </li>
             ))}
             <a
-              href={resumePDF}
+              href="/Bharath G_Resume.pdf"
               download="Bharath G_Resume.pdf"
               className="resume-btn mt-8 w-full block text-center"
             >
