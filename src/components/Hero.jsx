@@ -173,7 +173,7 @@ const Hero = ({ id }) => {
           </motion.button>
 
           <motion.a
-            href="/Bharath G_Resume.pdf"
+            href="Bharath G_Resume.pdf"
             download="Bharath G_Resume.pdf"
             className="btn btn-secondary text-lg px-8 py-4"
             whileHover={{ scale: 1.05 }}
