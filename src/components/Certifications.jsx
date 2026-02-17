@@ -10,8 +10,8 @@ const certificationsData = [
     title: 'SSIT Certification',
     issuer: 'SSIT',
     date: '2025',
-    description: 'Professional development certification focused on technical skills, software engineering practices, and industry-standard methodologies for modern technology solutions.',
-    skills: ['Technical Skills', 'Professional Development'],
+    description: 'Certified in ARM Cortex-M3 microcontroller programming using LPC1768 by SSIT, with hands-on experience in embedded C, peripheral interfacing, and real-time embedded system development.',
+    skills: ['ARM Cortex-M3(LPC1768)', 'Embedded C'],
     image: ssitImg,
   },
   {
