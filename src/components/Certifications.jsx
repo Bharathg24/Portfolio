@@ -55,8 +55,9 @@ const Certifications = ({ id }) => {
               <div className="mb-4">
                 <img 
                   src={cert.image} 
-                  alt={cert.title} 
+                  alt={`${cert.title} certification issued by ${cert.issuer}`} 
                   className="w-full h-64 object-contain bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-lg border-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors p-4"
+                  loading="lazy"
                 />
               </div>
             ) : null}

@@ -9,6 +9,7 @@ const projectsData = [
       'AI-based system that detects fabric defects in real time using deep learning. Implemented YOLO with PyTorch to identify defects like holes and stains, improving textile quality inspection accuracy and efficiency.',
     tech: ['YOLO', 'PyTorch', 'Deep Learning', 'Computer Vision'],
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
+    alt: 'AI powered fabric defect detection system using YOLO and PyTorch',
     github: '#',
     demo: '#',
   },
@@ -18,6 +19,7 @@ const projectsData = [
       'Secure door access control system with dual authentication. Uses RFID cards and keypad-based PIN verification with ESP32 to control a solenoid lock, enhancing home security.',
     tech: ['ESP32', 'RFID', 'Keypad', 'Solenoid Lock'],
     image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop',
+    alt: 'Smart home door lock system with RFID and ESP32 microcontroller',
     github: '#',
     demo: '#',
   },
@@ -27,6 +29,7 @@ const projectsData = [
       'Intelligent monitoring system for precision agriculture. Analyzes environmental and sensor data using AI to monitor crop conditions and support better irrigation and farming decisions.',
     tech: ['AI/ML', 'IoT Sensors', 'Data Analytics', 'Precision Agriculture'],
     image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop',
+    alt: 'AI based smart agriculture monitoring system with IoT sensors',
     github: '#',
     demo: '#',
   },
@@ -36,6 +39,7 @@ const projectsData = [
       'Voice-controlled appliance automation without internet dependency. Uses Seedgrove Voice Recognition Module and ESP32 to control home appliances completely offline, ensuring privacy and reliability.',
     tech: ['ESP32', 'Voice Recognition', 'Offline Processing', 'Home Automation'],
     image: 'https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=600&h=400&fit=crop',
+    alt: 'Offline voice activated home automation system using ESP32',
     github: '#',
     demo: '#',
   },
@@ -72,8 +76,9 @@ const Projects = ({ id }) => {
             <div className="relative overflow-hidden rounded-lg mb-4 h-48">
               <img
                 src={project.image}
-                alt={project.title}
+                alt={project.alt || project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
             </div>
@@ -126,6 +131,23 @@ const Projects = ({ id }) => {
           </motion.div>
         ))}
       </div>
+
+      {/* CTA to Contact */}
+      <motion.div
+        className="text-center mt-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+        <p className="text-gray-300 mb-6 text-lg">Interested in working together?</p>
+        <a 
+          href="#contact" 
+          className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
+        >
+          Get In Touch →
+        </a>
+      </motion.div>
     </section>
   );
 };

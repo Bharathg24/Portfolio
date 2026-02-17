@@ -47,7 +47,7 @@ const SkillIcon = ({ skill }) => {
     return (
       <img 
         src={skill.icon} 
-        alt={skill.name} 
+        alt={`${skill.name} programming language icon`} 
         className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
         onError={() => setImageError(true)}
         loading="lazy"

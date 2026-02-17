@@ -113,14 +113,14 @@ const Contact = ({ id }) => {
   return (
     <>
       <Helmet>
-        <title>Sanjay N | Contact</title>
+        <title>Contact Bharath G | Full Stack Developer</title>
         <meta
           name="description"
-          content="Get in touch with Sanjay N for collaboration, freelance projects, or inquiries. Connect via email, LinkedIn, or the contact form."
+          content="Get in touch with Bharath G for collaboration, AI/ML projects, embedded systems development, or inquiries. Connect via email, LinkedIn, or contact form."
         />
-        <meta property="og:title" content="Contact Sanjay N | Get In Touch" />
-        <meta property="og:description" content="Get in touch with Sanjay N for collaboration, freelance projects, or inquiries." />
-        <meta property="og:url" content="https://sanjayn.me/#contact" />
+        <meta property="og:title" content="Contact Bharath G | Get In Touch" />
+        <meta property="og:description" content="Get in touch with Bharath G for collaboration, AI/ML projects, embedded systems development, or inquiries." />
+        <meta property="og:url" content="https://www.bharathg.me/#contact" />
         <meta property="og:type" content="website" />
       </Helmet>
       

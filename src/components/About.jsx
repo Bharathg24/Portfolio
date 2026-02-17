@@ -64,6 +64,16 @@ const About = ({ id }) => {
               I'm focused on real-time systems, firmware development, and optimizing hardware for better performance and efficiency. My goal is to contribute to innovative embedded systems and semiconductor technologies.
             </p>
 
+            {/* CTA to Projects */}
+            <div className="mt-8">
+              <a 
+                href="#projects" 
+                className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
+              >
+                View My Projects →
+              </a>
+            </div>
+
           </div>
         </motion.div>
 

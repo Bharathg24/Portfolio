@@ -90,8 +90,9 @@ const Hero = ({ id }) => {
             <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden border-2 border-cyan-400/60 shadow-2xl shadow-cyan-500/30 relative group">
               <img 
                 src={heroImage} 
-                alt="Bharath G" 
+                alt="Bharath G - Full Stack Developer specializing in AI, ML, and embedded systems" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="eager"
               />
               {/* Animated border glow */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/30 to-emerald-400/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>

@@ -1,0 +1,11 @@
+# robots.txt for www.bharathg.me
+
+User-agent: *
+Allow: /
+
+# Disallow private directories (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.bharathg.me/sitemap.xml

@@ -38,12 +38,14 @@ function MainApp() {
     <div style={{ minHeight: '100vh', background: '#020617', color: '#ffffff', paddingTop: '70px' }}>
       <CustomCursor />
       <Navbar activeSection={activeSection} />
-      <Hero id="home" />
-      <About id="about" />
-      <Skills id="skills" />
-      <Projects id="projects" />
-      <Certifications id="certifications" />
-      <Contact id="contact" />
+      <main role="main">
+        <Hero id="home" />
+        <About id="about" />
+        <Skills id="skills" />
+        <Projects id="projects" />
+        <Certifications id="certifications" />
+        <Contact id="contact" />
+      </main>
       <Footer />
     </div>
   );

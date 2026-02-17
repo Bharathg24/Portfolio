@@ -14,6 +14,16 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          {/* Internal Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-6">
+            <a href="#home" className="text-gray-400 hover:text-cyan-400 transition-colors">Home</a>
+            <a href="#about" className="text-gray-400 hover:text-cyan-400 transition-colors">About</a>
+            <a href="#skills" className="text-gray-400 hover:text-cyan-400 transition-colors">Skills</a>
+            <a href="#projects" className="text-gray-400 hover:text-cyan-400 transition-colors">Projects</a>
+            <a href="#certifications" className="text-gray-400 hover:text-cyan-400 transition-colors">Certifications</a>
+            <a href="#contact" className="text-gray-400 hover:text-cyan-400 transition-colors">Contact</a>
+          </div>
+
           {/* Social Media Links */}
           <div className="flex justify-center gap-4 mb-6">
             <SocialIcon Icon={Github} href={socialLinks.github} />

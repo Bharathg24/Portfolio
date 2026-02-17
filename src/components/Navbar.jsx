@@ -45,7 +45,7 @@ const Navbar = ({ activeSection }) => {
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'py-3' : 'py-4'} transition-all duration-300`}> 
+      <nav className={`navbar ${scrolled ? 'py-3' : 'py-4'} transition-all duration-300`} role="navigation" aria-label="Main navigation"> 
         <div className="nav-container flex justify-between items-center">
           <motion.div 
             className="nav-logo cursor-grow"
@@ -56,7 +56,12 @@ const Navbar = ({ activeSection }) => {
           </motion.div>
 
           {/* Hamburger for mobile */}
-          <button className="md:hidden block text-cyan-400 focus:outline-none" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button 
+            className="md:hidden block text-cyan-400 focus:outline-none" 
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileOpen}
+          >
             <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <line x1="3" y1="7" x2="21" y2="7" />
               <line x1="3" y1="12" x2="21" y2="12" />
@@ -92,6 +97,7 @@ const Navbar = ({ activeSection }) => {
             className="resume-btn hidden md:inline-flex"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Download Resume PDF"
           >
             <Download className="w-4 h-4 inline mr-2" />
             Resume
@@ -102,8 +108,12 @@ const Navbar = ({ activeSection }) => {
         <div className={`fixed inset-0 z-50 bg-black bg-opacity-60 transition-opacity duration-300 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
           onClick={() => setMobileOpen(false)}
         />
-        <div className={`fixed top-0 right-0 w-64 h-full bg-[#020617] shadow-lg z-50 transform transition-transform duration-300 ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}> 
-          <button className="absolute top-4 right-4 text-cyan-400" onClick={() => setMobileOpen(false)}>
+        <div className={`fixed top-0 right-0 w-64 h-full bg-[#020617] shadow-lg z-50 transform transition-transform duration-300 ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`} role="dialog" aria-label="Mobile navigation menu"> 
+          <button 
+            className="absolute top-4 right-4 text-cyan-400" 
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close mobile menu"
+          >
             <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
