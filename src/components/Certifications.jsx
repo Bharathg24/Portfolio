@@ -36,7 +36,7 @@ const Certifications = ({ id }) => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="h2">Certifications & Achievements</h2>
+        <h2 className="h2">Certifications</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mt-4 rounded-full" />
       </motion.div>
 
